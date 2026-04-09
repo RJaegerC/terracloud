@@ -29,3 +29,15 @@
     state: present
     extra_args: --ignore-installed
   when: docker_version_check.rc != 0
+
+- name: Enable Docker service on linux
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  notify: restart docker
+
+- name: Check if Docker Compose exists
+  stat:
+    path: /usr/local/bin/docker-compose
+  register: docker_compose_stat
