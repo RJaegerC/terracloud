@@ -1,0 +1,12 @@
+---
+- name: Check if docker is installed
+  command: docker --version
+  register: docker_check
+  failed_when: false
+  changed_when: false
+
+- name: Install docker
+  package:
+    name: docker-25.0.6
+    state: present
+  when: docker_check.rc != 0
