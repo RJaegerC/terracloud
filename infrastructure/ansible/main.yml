@@ -1,0 +1,14 @@
+---
+- name: Create a website at AWS
+  hosts: all
+  become: true
+
+  collections:
+    - ansible.builtin
+    - community.docker
+
+  vars_files:
+    - vars/vars.yml
+    
+  handlers:
+    - import_tasks: handlers/main.yml
