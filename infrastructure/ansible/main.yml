@@ -12,3 +12,13 @@
     
   handlers:
     - import_tasks: handlers/main.yml
+  
+  tasks:
+    - name: Configure server with Docker and dependencies
+      include_tasks: config-server.yml
+
+    - name: Create application directory
+      file:
+        path: "{{ app_install_dir }}"
+        state: directory
+        mode: '0755'
