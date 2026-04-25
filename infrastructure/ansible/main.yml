@@ -22,3 +22,29 @@
         path: "{{ app_install_dir }}"
         state: directory
         mode: '0755'
+
+    - name: Create docker-compose.yml file to deploy the website
+      template:
+        src: "docker-compose.yml.j2"
+        dest: "{{ app_install_dir }}/docker-compose.yml"
+        mode: "{{ compose_file_mode }}"
+      register: compose_file_created
+
+    - name: Generate the website index file
+      template:
+        src: "index.html.j2"
+        dest: "{{ app_install_dir }}/index.html"
+        mode: "{{ html_file_mode }}"
+      register: html_file_created
+
+    - name: Create and start the website (nginx) service
+      docker_compose_v2:
+        project_src: "{{ app_install_dir }}"
+        state: present
+      register: docker_compose_result
+      when: compose_file_created.changed or html_file_created.changed
+
+    - name: Show Docker Compose deployment status
+      debug:
+        msg: "Docker Compose deployment completed"
+      when: docker_compose_result.changed | default(false)
