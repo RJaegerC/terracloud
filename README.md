@@ -212,7 +212,7 @@ Destroy
 
 ./destroy.sh - will result in all tf state and aws provision destroyed
 
-### Server Configuration with Ansible
+# Server Configuration with Ansible
 
 Objective: Configure the EC2 instance with Docker and deploy a containerized website.
 
@@ -257,7 +257,7 @@ curl http://<INSTANCE_IP>
 
 ### Expected: Custom HTML page with web information
 
-### Creating a Custom AMI with Packer
+# Creating a Custom AMI with Packer
 
 cd packer
 
@@ -266,7 +266,7 @@ cd packer
 ### Enter the SSH key path when prompted (default: ~/.ssh/id_ed25519)
 ### Note the AMI ID from the output
 
-### Instructions for the terraform with ami (web server ready): 
+# Instructions for the terraform with ami (web server ready): 
 
 cd terraform
 
