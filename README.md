@@ -85,7 +85,7 @@ sudo apt update && sudo apt install packer
 
 ### Or download from https://www.packer.io/downloads
 
-### 📝 How to use the provision
+## 📝 How to use the provision
 
 AWS Configuration
 
