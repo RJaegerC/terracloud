@@ -120,7 +120,7 @@ variable "environment" {
 variable "project_name" {
   description = "Name of the project this AMI belongs to"
   type        = string
-  default     = "fast"
+  default     = "devopscloud"
   
   validation {
     condition     = can(regex("^[a-zA-Z0-9_-]+$", var.project_name)) && length(var.project_name) >= 2 && length(var.project_name) <= 30
