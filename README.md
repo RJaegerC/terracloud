@@ -21,7 +21,7 @@ pip install awscli
 
 ##
 
-**Terraform**
+# **Terraform**
 
 ### tfenv (Terraform version manager) – RECOMMENDED
 ### macOS
@@ -60,7 +60,7 @@ tfenv install
 
 ##
 
-**Ansible**
+# **Ansible**
 
 ### macOS
 brew install ansible
@@ -73,7 +73,7 @@ pip install ansible
 
 ##
 
-**Packer** 
+# **Packer** 
 
 ### macOS
 brew install packer
@@ -151,7 +151,7 @@ aws sts get-caller-identity
 
 ## 🚀 Provisioning
 
-**Terraform** 
+# **Terraform** 
 
 Step 1: Configure S3 Backend (First Run)
 
